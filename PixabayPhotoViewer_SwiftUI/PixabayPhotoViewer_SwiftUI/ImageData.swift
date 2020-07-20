@@ -8,6 +8,12 @@
 
 import Foundation
 
+struct ImageListData: Identifiable {
+    var user: String
+    var tag: String
+    var previewURL: String
+}
+
 final class ImageData {
     
 }
