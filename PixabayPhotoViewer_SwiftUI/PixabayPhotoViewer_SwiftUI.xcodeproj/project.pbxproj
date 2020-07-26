@@ -60,14 +60,8 @@
 		FD45BB8624C1E51E00EBCDE5 /* PixabayPhotoViewer_SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				FD45BB8724C1E51E00EBCDE5 /* AppDelegate.swift */,
-				FD45BB8924C1E51E00EBCDE5 /* SceneDelegate.swift */,
-				FD45BB8B24C1E51E00EBCDE5 /* ContentView.swift */,
-				FD7547A724C7290100915FA3 /* ImageRow.swift */,
-				FD7547A524C33F4F00915FA3 /* Image.swift */,
-				FD45BB8D24C1E52500EBCDE5 /* Assets.xcassets */,
-				FD45BB9224C1E52500EBCDE5 /* LaunchScreen.storyboard */,
-				FD45BB9524C1E52500EBCDE5 /* Info.plist */,
+				FD7547AD24CDC78800915FA3 /* SupportingFiles */,
+				FD7547A924CDC6F000915FA3 /* Image */,
 				FD45BB8F24C1E52500EBCDE5 /* Preview Content */,
 			);
 			path = PixabayPhotoViewer_SwiftUI;
@@ -79,6 +73,52 @@
 				FD45BB9024C1E52500EBCDE5 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FD7547A924CDC6F000915FA3 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				FD7547AA24CDC6FD00915FA3 /* ImageList */,
+				FD7547AB24CDC71500915FA3 /* ImageDetail */,
+				FD7547AC24CDC74300915FA3 /* PixabayAPI */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		FD7547AA24CDC6FD00915FA3 /* ImageList */ = {
+			isa = PBXGroup;
+			children = (
+				FD45BB8B24C1E51E00EBCDE5 /* ContentView.swift */,
+				FD7547A724C7290100915FA3 /* ImageRow.swift */,
+				FD7547A524C33F4F00915FA3 /* Image.swift */,
+			);
+			path = ImageList;
+			sourceTree = "<group>";
+		};
+		FD7547AB24CDC71500915FA3 /* ImageDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ImageDetail;
+			sourceTree = "<group>";
+		};
+		FD7547AC24CDC74300915FA3 /* PixabayAPI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PixabayAPI;
+			sourceTree = "<group>";
+		};
+		FD7547AD24CDC78800915FA3 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				FD45BB8724C1E51E00EBCDE5 /* AppDelegate.swift */,
+				FD45BB8924C1E51E00EBCDE5 /* SceneDelegate.swift */,
+				FD45BB9524C1E52500EBCDE5 /* Info.plist */,
+				FD45BB8D24C1E52500EBCDE5 /* Assets.xcassets */,
+				FD45BB9224C1E52500EBCDE5 /* LaunchScreen.storyboard */,
+			);
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
