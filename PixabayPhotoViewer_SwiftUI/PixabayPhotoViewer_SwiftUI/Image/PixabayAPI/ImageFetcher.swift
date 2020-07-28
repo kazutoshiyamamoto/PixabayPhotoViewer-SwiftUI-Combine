@@ -42,3 +42,20 @@ private extension ImageFetcher {
         return components
     }
 }
+
+extension ImageFetcher: ImageFetchable {
+    private func image<T>(components: URLComponents) -> AnyPublisher<T, ImageError> where T: Decodable {
+        guard let url = components.url else {
+            let error = ImageError.network(description: "Couldn't create URL")
+            return Fail(error: error).eraseToAnyPublisher()
+        }
+        return session.dataTaskPublisher(for: URLRequest(url: url))
+            .mapError { error in
+                .network(description: error.localizedDescription)
+        }
+        .flatMap(maxPublishers: .max(1)) { pair in
+            decode(pair.data)
+        }
+        .eraseToAnyPublisher()
+    }
+}
