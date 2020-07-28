@@ -7,6 +7,11 @@
 //
 
 import Foundation
+import Combine
+
+protocol ImageFetchable {
+    func fetchImage(searchTerm: String) -> AnyPublisher<ImageResponse, ImageError>
+}
 
 class ImageFetcher {
     private let session: URLSession
