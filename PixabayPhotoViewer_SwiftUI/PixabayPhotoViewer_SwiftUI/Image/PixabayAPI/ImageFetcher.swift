@@ -22,4 +22,18 @@ private extension ImageFetcher {
         static let path = "/api/"
         static let key = ""
     }
+    
+    func makeImageComponents(searchTerm: String) -> URLComponents {
+        var components = URLComponents()
+        components.scheme = PixabayAPI.scheme
+        components.host = PixabayAPI.host
+        components.path = PixabayAPI.path
+        
+        components.queryItems = [
+            URLQueryItem(name: "q", value: searchTerm),
+            URLQueryItem(name: "key", value: PixabayAPI.key)
+        ]
+        
+        return components
+    }
 }
