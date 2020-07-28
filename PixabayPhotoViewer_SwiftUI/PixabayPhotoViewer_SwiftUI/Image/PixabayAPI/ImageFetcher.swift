@@ -14,3 +14,12 @@ class ImageFetcher {
         self.session = session
     }
 }
+
+private extension ImageFetcher {
+    struct PixabayAPI {
+        static let scheme = "https"
+        static let host = "pixabay.com"
+        static let path = "/api/"
+        static let key = ""
+    }
+}
