@@ -44,6 +44,10 @@ private extension ImageFetcher {
 }
 
 extension ImageFetcher: ImageFetchable {
+    func fetchImage(searchTerm: String) -> AnyPublisher<ImageResponse, ImageError> {
+        return image(components: makeImageComponents(searchTerm: searchTerm))
+    }
+    
     private func image<T>(components: URLComponents) -> AnyPublisher<T, ImageError> where T: Decodable {
         guard let url = components.url else {
             let error = ImageError.network(description: "Couldn't create URL")
