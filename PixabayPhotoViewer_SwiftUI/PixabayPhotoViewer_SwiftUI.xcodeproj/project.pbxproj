@@ -16,6 +16,7 @@
 		FD7547AF24CF02EA00915FA3 /* ImageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7547AE24CF02EA00915FA3 /* ImageError.swift */; };
 		FD7547B124CF03B800915FA3 /* Responses.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7547B024CF03B800915FA3 /* Responses.swift */; };
 		FD7547B424CF079100915FA3 /* Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7547B324CF079100915FA3 /* Parsing.swift */; };
+		FDFD952924D071FC00BE8493 /* ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFD952824D071FC00BE8493 /* ImageFetcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		FD7547AE24CF02EA00915FA3 /* ImageError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageError.swift; sourceTree = "<group>"; };
 		FD7547B024CF03B800915FA3 /* Responses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Responses.swift; sourceTree = "<group>"; };
 		FD7547B324CF079100915FA3 /* Parsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parsing.swift; sourceTree = "<group>"; };
+		FDFD952824D071FC00BE8493 /* ImageFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFetcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				FD7547B024CF03B800915FA3 /* Responses.swift */,
+				FDFD952824D071FC00BE8493 /* ImageFetcher.swift */,
 				FD7547AE24CF02EA00915FA3 /* ImageError.swift */,
 			);
 			path = PixabayAPI;
@@ -215,6 +218,7 @@
 				FD7547AF24CF02EA00915FA3 /* ImageError.swift in Sources */,
 				FD45BB8A24C1E51E00EBCDE5 /* SceneDelegate.swift in Sources */,
 				FD7547B424CF079100915FA3 /* Parsing.swift in Sources */,
+				FDFD952924D071FC00BE8493 /* ImageFetcher.swift in Sources */,
 				FD7547B124CF03B800915FA3 /* Responses.swift in Sources */,
 				FD45BB8C24C1E51E00EBCDE5 /* ContentView.swift in Sources */,
 			);
