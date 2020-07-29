@@ -11,6 +11,7 @@ import Foundation
 struct ImageResponse: Codable {
     var hits: [Hits]
     struct Hits: Codable {
+        var id: Int
         var previewURL: String
         var tags: String
         var user: String
