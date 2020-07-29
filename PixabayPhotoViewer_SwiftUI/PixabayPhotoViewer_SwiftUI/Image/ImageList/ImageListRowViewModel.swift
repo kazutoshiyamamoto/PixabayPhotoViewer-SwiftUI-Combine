@@ -7,3 +7,7 @@
 //
 
 import Foundation
+import Combine
+
+struct ImageListRowViewModel: Identifiable {
+}
