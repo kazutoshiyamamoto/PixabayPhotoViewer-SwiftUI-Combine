@@ -10,4 +10,25 @@ import Foundation
 import Combine
 
 struct ImageListRowViewModel: Identifiable {
+    private let hits: ImageResponse.Hits
+    
+    var id: Int {
+        return hits.id
+    }
+    
+    var tags: String {
+        return hits.tags
+    }
+    
+    var user: String {
+        return hits.user
+    }
+    
+    var previewURL: String {
+        return hits.previewURL
+    }
+    
+    init(hits: ImageResponse.Hits) {
+        self.hits = hits
+    }
 }
