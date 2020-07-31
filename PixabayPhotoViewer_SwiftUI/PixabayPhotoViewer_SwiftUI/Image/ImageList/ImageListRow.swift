@@ -14,5 +14,11 @@ struct ImageListRow: View {
     init(viewModel: ImageListRowViewModel) {
         self.viewModel = viewModel
     }
+    
+    var body: some View {
+        HStack {
+            Text(viewModel.tags)
+            Text(viewModel.user)
+        }
     }
 }
