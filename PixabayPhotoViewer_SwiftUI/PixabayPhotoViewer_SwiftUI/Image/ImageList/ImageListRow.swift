@@ -9,6 +9,10 @@
 import SwiftUI
 
 struct ImageListRow: View {
+    private let viewModel: ImageListRowViewModel
+    
+    init(viewModel: ImageListRowViewModel) {
+        self.viewModel = viewModel
     }
     }
 }
