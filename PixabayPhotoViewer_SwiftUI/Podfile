@@ -6,5 +6,6 @@ target 'PixabayPhotoViewer_SwiftUI' do
   use_frameworks!
 
   # Pods for PixabayPhotoViewer_SwiftUI
+  pod 'Nuke'
 
 end
