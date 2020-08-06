@@ -39,5 +39,18 @@ class ImageListViewModel: ObservableObject {
                 .catch { Just(Result.failure($0)) }
                 .eraseToAnyPublisher()
         }
+        .switchToLatest()
+        .receive(on: DispatchQueue.main)
+        .sink(receiveValue: { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case let .success(images):
+                self.dataSource = images
+                
+            case .failure:
+                self.dataSource = []
+            }
+        })
+            .store(in: &disposables)
     }
 }
