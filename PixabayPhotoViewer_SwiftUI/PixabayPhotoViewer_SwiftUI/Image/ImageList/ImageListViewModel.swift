@@ -18,5 +18,8 @@ class ImageListViewModel: ObservableObject {
     
     init(imageFetcher: ImageFetchable) {
         self.imageFetcher = imageFetcher
+        
+        let _fetchImage = PassthroughSubject<String, Never>()
+        
     }
 }
