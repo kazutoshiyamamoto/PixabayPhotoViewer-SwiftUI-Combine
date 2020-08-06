@@ -16,5 +16,7 @@ class ImageListViewModel: ObservableObject {
     private let imageFetcher: ImageFetchable
     private var disposables = [AnyCancellable]()
     
+    init(imageFetcher: ImageFetchable) {
+        self.imageFetcher = imageFetcher
     }
 }
