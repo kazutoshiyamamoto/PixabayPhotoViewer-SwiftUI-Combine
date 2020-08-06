@@ -7,15 +7,8 @@
 //
 
 import SwiftUI
+import Combine
 
-struct ImageListViewModel: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-struct ImageListViewModel_Previews: PreviewProvider {
-    static var previews: some View {
-        ImageListViewModel()
+class ImageListViewModel: ObservableObject {
     }
 }
