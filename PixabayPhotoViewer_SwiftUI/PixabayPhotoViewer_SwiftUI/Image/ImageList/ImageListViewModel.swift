@@ -11,5 +11,6 @@ import Combine
 
 class ImageListViewModel: ObservableObject {
     @Published var searchWord: String = ""
+    @Published var dataSource: [ImageListRowViewModel] = []
     }
 }
