@@ -16,10 +16,15 @@ class ImageListViewModel: ObservableObject {
     private let imageFetcher: ImageFetchable
     private var disposables = [AnyCancellable]()
     
-    init(imageFetcher: ImageFetchable) {
+    init(imageFetcher: ImageFetchable, scheduler: DispatchQueue = DispatchQueue(label: "ImageListViewModel")) {
         self.imageFetcher = imageFetcher
         
         let _fetchImage = PassthroughSubject<String, Never>()
         
+        $searchWord
+            .filter{ !$0.isEmpty }
+            .debounce(for: .seconds(0.5), scheduler: scheduler)
+            .sink(receiveValue: { _fetchImage.send($0) })
+            .store(in: &disposables)
     }
 }
