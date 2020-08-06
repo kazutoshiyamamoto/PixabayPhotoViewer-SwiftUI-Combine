@@ -14,5 +14,7 @@ class ImageListViewModel: ObservableObject {
     @Published var dataSource: [ImageListRowViewModel] = []
     
     private let imageFetcher: ImageFetchable
+    private var disposables = [AnyCancellable]()
+    
     }
 }
