@@ -10,5 +10,6 @@ import SwiftUI
 import Combine
 
 class ImageListViewModel: ObservableObject {
+    @Published var searchWord: String = ""
     }
 }
