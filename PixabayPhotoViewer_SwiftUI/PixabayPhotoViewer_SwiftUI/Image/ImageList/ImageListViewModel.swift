@@ -26,5 +26,18 @@ class ImageListViewModel: ObservableObject {
             .debounce(for: .seconds(0.5), scheduler: scheduler)
             .sink(receiveValue: { _fetchImage.send($0) })
             .store(in: &disposables)
+        
+        _fetchImage
+            .map { searchWord -> AnyPublisher<Result<[ImageListRowViewModel], ImageError>, Never> in
+                imageFetcher.fetchImage(searchWord: searchWord)
+                    .prefix(1)
+                    .map {
+                        Result.success(
+                            $0.hits.map(ImageListRowViewModel.init)
+                        )
+                }
+                .catch { Just(Result.failure($0)) }
+                .eraseToAnyPublisher()
+        }
     }
 }
