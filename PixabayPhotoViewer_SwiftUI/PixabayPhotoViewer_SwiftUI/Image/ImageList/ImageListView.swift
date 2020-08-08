@@ -32,4 +32,11 @@ private extension ImageListView {
             ForEach(viewModel.dataSource, content: ImageListRow.init(viewModel:))
         }
     }
+    
+    var emptySection: some View {
+        Section {
+            Text("検索結果なし")
+                .foregroundColor(.gray)
+        }
+    }
 }
