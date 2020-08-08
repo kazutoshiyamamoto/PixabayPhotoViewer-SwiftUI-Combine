@@ -9,6 +9,12 @@
 import SwiftUI
 
 struct ImageListView: View {
+    @ObservedObject var viewModel: ImageListViewModel
+    
+    init(viewModel: ImageListViewModel) {
+        self.viewModel = viewModel
+    }
+    
     var body: some View {
         Text("Hello, World!")
     }
