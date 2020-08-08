@@ -17,8 +17,13 @@ struct ImageListRow: View {
     
     var body: some View {
         HStack {
-            Text(viewModel.tags)
-            Text(viewModel.user)
+            ImageView(imageLoader: ImageLoader(url: URL(string: viewModel.previewURL)!))
+                .frame(width: 100.0, height: 100.0)
+            VStack(alignment: .leading) {
+                Text("user:\(viewModel.user)")
+                Text("tag:\(viewModel.tags)")
+            }
         }
+        .frame(height: 70.0)
     }
 }
