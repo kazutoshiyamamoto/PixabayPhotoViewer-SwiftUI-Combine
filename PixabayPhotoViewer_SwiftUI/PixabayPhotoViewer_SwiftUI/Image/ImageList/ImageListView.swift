@@ -19,3 +19,11 @@ struct ImageListView: View {
         Text("Hello, World!")
     }
 }
+
+private extension ImageListView {
+    var searchField: some View {
+        HStack(alignment: .center) {
+            TextField("画像を検索", text: $viewModel.searchWord)
+        }
+    }
+}
