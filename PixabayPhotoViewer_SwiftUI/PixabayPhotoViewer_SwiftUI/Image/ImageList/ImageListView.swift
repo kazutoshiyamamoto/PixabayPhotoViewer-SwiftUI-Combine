@@ -26,4 +26,10 @@ private extension ImageListView {
             TextField("画像を検索", text: $viewModel.searchWord)
         }
     }
+    
+    var imageListSection: some View {
+        Section {
+            ForEach(viewModel.dataSource, content: ImageListRow.init(viewModel:))
+        }
+    }
 }
