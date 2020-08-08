@@ -16,7 +16,17 @@ struct ImageListView: View {
     }
     
     var body: some View {
-        Text("Hello, World!")
+        List {
+            searchField
+            
+            if !viewModel.dataSource.isEmpty {
+                imageListSection
+            } else {
+                emptySection
+            }
+        }
+        .listStyle(GroupedListStyle())
+        .navigationBarTitle("Pixabay")
     }
 }
 
