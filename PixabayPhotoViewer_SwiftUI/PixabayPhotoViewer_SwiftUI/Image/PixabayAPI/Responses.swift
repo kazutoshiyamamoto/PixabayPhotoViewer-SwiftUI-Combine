@@ -15,6 +15,18 @@ struct ImageListResponse: Codable {
         var tags: String
         var user: String
         var previewURL: String
+    }
+}
+
+struct ImageDetailResponse: Codable {
+    var hits: [Hits]
+    struct Hits: Codable {
+        var id: Int
+        var tags: String
+        var views: Int
+        var favorites: Int
+        var likes: Int
+        var user: String
         var webformatURL: String
     }
 }
