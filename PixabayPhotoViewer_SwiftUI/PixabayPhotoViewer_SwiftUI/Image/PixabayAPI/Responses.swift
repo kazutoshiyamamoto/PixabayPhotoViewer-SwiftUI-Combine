@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ImageResponse: Codable {
+struct ImageListResponse: Codable {
     var hits: [Hits]
     struct Hits: Codable {
         var id: Int

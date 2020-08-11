@@ -10,7 +10,7 @@ import Foundation
 import Combine
 
 struct ImageListRowViewModel: Identifiable {
-    private let hits: ImageResponse.Hits
+    private let hits: ImageListResponse.Hits
     
     var id: Int {
         return hits.id
@@ -28,7 +28,7 @@ struct ImageListRowViewModel: Identifiable {
         return hits.previewURL
     }
     
-    init(hits: ImageResponse.Hits) {
+    init(hits: ImageListResponse.Hits) {
         self.hits = hits
     }
 }

@@ -29,7 +29,7 @@ class ImageListViewModel: ObservableObject {
         
         _fetchImage
             .map { searchWord -> AnyPublisher<Result<[ImageListRowViewModel], ImageError>, Never> in
-                imageFetcher.fetchImage(searchWord: searchWord)
+                imageFetcher.fetchImageList(searchWord: searchWord)
                     .prefix(1)
                     .map {
                         Result.success(

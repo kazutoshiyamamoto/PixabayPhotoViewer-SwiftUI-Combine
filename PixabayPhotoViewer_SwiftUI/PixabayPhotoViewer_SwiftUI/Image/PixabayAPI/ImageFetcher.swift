@@ -10,7 +10,7 @@ import Foundation
 import Combine
 
 protocol ImageFetchable {
-    func fetchImage(searchWord: String) -> AnyPublisher<ImageResponse, ImageError>
+    func fetchImageList(searchWord: String) -> AnyPublisher<ImageListResponse, ImageError>
 }
 
 class ImageFetcher {
@@ -28,7 +28,7 @@ private extension ImageFetcher {
         static let key = ""
     }
     
-    func makeImageComponents(searchTerm: String) -> URLComponents {
+    func makeImageListComponents(searchTerm: String) -> URLComponents {
         var components = URLComponents()
         components.scheme = PixabayAPI.scheme
         components.host = PixabayAPI.host
@@ -44,8 +44,8 @@ private extension ImageFetcher {
 }
 
 extension ImageFetcher: ImageFetchable {
-    func fetchImage(searchWord: String) -> AnyPublisher<ImageResponse, ImageError> {
-        return image(components: makeImageComponents(searchTerm: searchWord))
+    func fetchImageList(searchWord: String) -> AnyPublisher<ImageListResponse, ImageError> {
+        return image(components: makeImageListComponents(searchTerm: searchWord))
     }
     
     private func image<T>(components: URLComponents) -> AnyPublisher<T, ImageError> where T: Decodable {
