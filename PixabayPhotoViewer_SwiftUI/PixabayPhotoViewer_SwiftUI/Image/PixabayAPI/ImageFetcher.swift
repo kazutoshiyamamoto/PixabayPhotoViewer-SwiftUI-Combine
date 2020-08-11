@@ -11,6 +11,8 @@ import Combine
 
 protocol ImageFetchable {
     func fetchImageList(searchWord: String) -> AnyPublisher<ImageListResponse, ImageError>
+    
+    func fetchImageDetail(id: Int) -> AnyPublisher<ImageDetailResponse, ImageError>
 }
 
 class ImageFetcher {
@@ -41,11 +43,29 @@ private extension ImageFetcher {
         
         return components
     }
+    
+    func makeImageDetailComponents(id: Int) -> URLComponents {
+        var components = URLComponents()
+        components.scheme = PixabayAPI.scheme
+        components.host = PixabayAPI.host
+        components.path = PixabayAPI.path
+        
+        components.queryItems = [
+            URLQueryItem(name: "id", value: "\(id)"),
+            URLQueryItem(name: "key", value: PixabayAPI.key)
+        ]
+        
+        return components
+    }
 }
 
 extension ImageFetcher: ImageFetchable {
     func fetchImageList(searchWord: String) -> AnyPublisher<ImageListResponse, ImageError> {
         return image(components: makeImageListComponents(searchWord: searchWord))
+    }
+    
+    func fetchImageDetail(id: Int) -> AnyPublisher<ImageDetailResponse, ImageError> {
+        return image(components: makeImageDetailComponents(id: id))
     }
     
     private func image<T>(components: URLComponents) -> AnyPublisher<T, ImageError> where T: Decodable {
