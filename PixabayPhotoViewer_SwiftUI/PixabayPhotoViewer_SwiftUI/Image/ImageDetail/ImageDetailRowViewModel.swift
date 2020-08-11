@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ImageDetailViewModel {
+struct ImageDetailRowViewModel {
     private let hits: ImageDetailResponse.Hits
     
     var tags: String {
