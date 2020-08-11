@@ -28,14 +28,14 @@ private extension ImageFetcher {
         static let key = ""
     }
     
-    func makeImageListComponents(searchTerm: String) -> URLComponents {
+    func makeImageListComponents(searchWord: String) -> URLComponents {
         var components = URLComponents()
         components.scheme = PixabayAPI.scheme
         components.host = PixabayAPI.host
         components.path = PixabayAPI.path
         
         components.queryItems = [
-            URLQueryItem(name: "q", value: searchTerm),
+            URLQueryItem(name: "q", value: searchWord),
             URLQueryItem(name: "key", value: PixabayAPI.key)
         ]
         
@@ -45,7 +45,7 @@ private extension ImageFetcher {
 
 extension ImageFetcher: ImageFetchable {
     func fetchImageList(searchWord: String) -> AnyPublisher<ImageListResponse, ImageError> {
-        return image(components: makeImageListComponents(searchTerm: searchWord))
+        return image(components: makeImageListComponents(searchWord: searchWord))
     }
     
     private func image<T>(components: URLComponents) -> AnyPublisher<T, ImageError> where T: Decodable {
