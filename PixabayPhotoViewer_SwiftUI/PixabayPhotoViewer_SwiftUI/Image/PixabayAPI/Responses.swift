@@ -21,7 +21,6 @@ struct ImageListResponse: Codable {
 struct ImageDetailResponse: Codable {
     var hits: [Hits]
     struct Hits: Codable {
-        var id: Int
         var tags: String
         var views: Int
         var favorites: Int
