@@ -14,5 +14,41 @@ struct ImageDetailRowView: View {
     init(viewModel: ImageDetailRowViewModel) {
         self.viewModel = viewModel
     }
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            ImageView(imageLoader: ImageLoader(url: URL(string: viewModel.webformatURL)!))
+                .frame(width: 100.0, height: 100.0)
+            
+            HStack {
+                Text("tags:")
+                Text(viewModel.tags)
+                    .foregroundColor(.gray)
+            }
+            
+            HStack {
+                Text("views:")
+                Text("\(viewModel.views)")
+                    .foregroundColor(.gray)
+            }
+            
+            HStack {
+                Text("favorites:")
+                Text("\(viewModel.favorites)")
+                    .foregroundColor(.gray)
+            }
+            
+            HStack {
+                Text("likes:")
+                Text("\(viewModel.likes)")
+                    .foregroundColor(.gray)
+            }
+            
+            HStack {
+                Text("user:")
+                Text(viewModel.user)
+                    .foregroundColor(.gray)
+            }
+        }
     }
 }
