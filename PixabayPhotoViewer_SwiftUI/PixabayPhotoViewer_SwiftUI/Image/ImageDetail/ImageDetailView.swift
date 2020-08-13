@@ -19,5 +19,13 @@ struct ImageDetailView: View {
     }
 }
 
+    
+    func details(viewModel: ImageDetailRowViewModel) -> some View {
+        ImageDetailRowView(viewModel: viewModel)
+    }
+    
+    var loading: some View {
+        Text("画像の読み込み中です")
+            .foregroundColor(.gray)
     }
 }
