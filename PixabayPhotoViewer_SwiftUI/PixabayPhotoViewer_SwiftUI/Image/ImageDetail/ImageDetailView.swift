@@ -16,6 +16,10 @@ struct ImageDetailView: View {
     }
     
     var body: some View {
+        List(content: content)
+            .onAppear(perform: viewModel.refresh)
+            .navigationBarTitle("画像詳細")
+            .listStyle(GroupedListStyle())
     }
 }
 
