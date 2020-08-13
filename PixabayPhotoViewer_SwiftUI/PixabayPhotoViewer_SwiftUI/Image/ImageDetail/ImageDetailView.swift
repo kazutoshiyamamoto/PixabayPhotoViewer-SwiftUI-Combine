@@ -19,6 +19,14 @@ struct ImageDetailView: View {
     }
 }
 
+private extension ImageDetailView {
+    func content() -> some View {
+        if let viewModel = viewModel.dataSource {
+            return AnyView(details(viewModel: viewModel))
+        } else {
+            return AnyView(loading)
+        }
+    }
     
     func details(viewModel: ImageDetailRowViewModel) -> some View {
         ImageDetailRowView(viewModel: viewModel)
