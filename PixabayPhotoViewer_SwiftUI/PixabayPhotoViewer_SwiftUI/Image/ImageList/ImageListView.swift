@@ -41,7 +41,11 @@ private extension ImageListView {
     
     var imageListSection: some View {
         Section {
-            ForEach(viewModel.dataSource, content: ImageListRow.init(viewModel:))
+            ForEach(viewModel.dataSource) { item in
+                NavigationLink(destination: self.viewModel.imageDetailView(id: item.id)) {
+                    ImageListRow(viewModel: item)
+                }
+            }
         }
     }
     
