@@ -54,3 +54,10 @@ class ImageListViewModel: ObservableObject {
             .store(in: &disposables)
     }
 }
+
+extension ImageListViewModel {
+    func imageDetailView(id: Int) -> some View {
+        let viewModel = ImageDetailViewModel(id: id, imageFetcher: imageFetcher)
+        return ImageDetailView(viewModel: viewModel)
+    }
+}
