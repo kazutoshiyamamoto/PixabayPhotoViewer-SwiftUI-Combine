@@ -42,12 +42,6 @@ struct ImageDetailRowView: View {
                 Text("\(viewModel.likes)")
                     .foregroundColor(.gray)
             }
-            
-            HStack {
-                Text("user:")
-                Text(viewModel.user)
-                    .foregroundColor(.gray)
-            }
         }
     }
 }
