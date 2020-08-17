@@ -16,7 +16,7 @@ struct ImageDetailRowView: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 10.0) {
             ImageView(imageLoader: ImageLoader(url: URL(string: viewModel.webformatURL)!))
                 
             HStack {
