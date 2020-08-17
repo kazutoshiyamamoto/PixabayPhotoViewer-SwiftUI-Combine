@@ -25,6 +25,7 @@ class ImageDetailViewModel: ObservableObject, Identifiable {
         imageFetcher
             .fetchImageDetail(id: id)
             .map { $0.hits.map(ImageDetailRowViewModel.init) }
+            .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { [weak self] value in
                 guard let self = self else { return }
                 switch value {
