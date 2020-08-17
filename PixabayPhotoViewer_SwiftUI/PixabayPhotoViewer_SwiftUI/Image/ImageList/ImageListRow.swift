@@ -21,13 +21,13 @@ struct ImageListRow: View {
                 .frame(width: 100.0, height: 100.0)
             VStack(alignment: .leading) {
                 HStack {
-                    Text("user:")
+                    Image(systemName: "person.fill")
                     Text(viewModel.user)
                         .foregroundColor(.gray)
                 }
                 
                 HStack {
-                    Text("tag:")
+                    Image(systemName: "tag.fill")
                     Text(viewModel.tags)
                         .foregroundColor(.gray)
                 }
