@@ -20,26 +20,26 @@ struct ImageDetailRowView: View {
             ImageView(imageLoader: ImageLoader(url: URL(string: viewModel.webformatURL)!))
                 
             HStack {
-                Text("tags:")
+                Image(systemName: "tag.fill")
                 Text(viewModel.tags)
                     .foregroundColor(.gray)
             }
             
             HStack {
-                Text("views:")
+                Image(systemName: "eye.fill")
                 Text("\(viewModel.views)")
                     .foregroundColor(.gray)
             }
             
             HStack {
-                Text("favorites:")
-                Text("\(viewModel.favorites)")
+                Image(systemName: "hand.thumbsup.fill")
+                Text("\(viewModel.likes)")
                     .foregroundColor(.gray)
             }
             
             HStack {
-                Text("likes:")
-                Text("\(viewModel.likes)")
+                Image(systemName: "star.fill")
+                Text("\(viewModel.favorites)")
                     .foregroundColor(.gray)
             }
         }
