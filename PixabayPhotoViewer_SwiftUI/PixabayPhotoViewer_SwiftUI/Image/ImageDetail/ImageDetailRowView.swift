@@ -22,25 +22,21 @@ struct ImageDetailRowView: View {
             HStack {
                 Image(systemName: "tag.fill")
                 Text(viewModel.tags)
-                    .foregroundColor(.gray)
             }
             
             HStack {
                 Image(systemName: "eye.fill")
                 Text("\(viewModel.views)")
-                    .foregroundColor(.gray)
             }
             
             HStack {
                 Image(systemName: "hand.thumbsup.fill")
                 Text("\(viewModel.likes)")
-                    .foregroundColor(.gray)
             }
             
             HStack {
                 Image(systemName: "star.fill")
                 Text("\(viewModel.favorites)")
-                    .foregroundColor(.gray)
             }
         }
     }
