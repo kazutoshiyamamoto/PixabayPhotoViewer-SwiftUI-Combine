@@ -37,7 +37,7 @@ private extension ImageDetailView {
     }
     
     var loading: some View {
-        Text("画像の読み込み中です")
+        Text("読み込み中...")
             .foregroundColor(.gray)
     }
 }
