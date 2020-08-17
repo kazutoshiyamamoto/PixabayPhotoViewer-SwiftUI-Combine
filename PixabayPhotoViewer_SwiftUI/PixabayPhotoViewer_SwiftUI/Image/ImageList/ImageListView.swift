@@ -35,8 +35,8 @@ struct ImageListView: View {
 private extension ImageListView {
     var searchField: some View {
         HStack(alignment: .center) {
-            TextField("画像を検索", text: $viewModel.searchWord)
             Image(systemName: "magnifyingglass")
+            TextField("Search Images", text: $viewModel.searchWord)
         }
     }
     
@@ -52,7 +52,7 @@ private extension ImageListView {
     
     var emptySection: some View {
         Section {
-            Text("検索結果なし")
+            Text("No results")
                 .foregroundColor(.gray)
         }
     }
