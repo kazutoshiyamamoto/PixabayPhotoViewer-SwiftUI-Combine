@@ -22,7 +22,6 @@ class ImageListViewModel: ObservableObject {
         let _fetchImage = PassthroughSubject<String, Never>()
         
         $searchWord
-            .filter{ !$0.isEmpty }
             .debounce(for: .seconds(0.5), scheduler: scheduler)
             .sink(receiveValue: { _fetchImage.send($0) })
             .store(in: &disposables)
