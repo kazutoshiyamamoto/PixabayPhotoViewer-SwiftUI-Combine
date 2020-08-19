@@ -23,7 +23,7 @@ struct ImageListView: View {
                 if !viewModel.dataSource.isEmpty {
                     imageListSection
                 } else {
-                    emptySection
+                    loadingSection
                 }
             }
             .listStyle(GroupedListStyle())
