@@ -52,7 +52,7 @@ private extension ImageListView {
     
     var loadingSection: some View {
         Section {
-            Text("No results")
+            Text("Loading...")
                 .foregroundColor(.gray)
         }
     }
