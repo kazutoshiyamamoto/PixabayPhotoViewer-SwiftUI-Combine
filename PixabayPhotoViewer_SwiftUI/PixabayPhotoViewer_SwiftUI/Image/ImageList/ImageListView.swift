@@ -50,7 +50,7 @@ private extension ImageListView {
         }
     }
     
-    var emptySection: some View {
+    var loadingSection: some View {
         Section {
             Text("No results")
                 .foregroundColor(.gray)
