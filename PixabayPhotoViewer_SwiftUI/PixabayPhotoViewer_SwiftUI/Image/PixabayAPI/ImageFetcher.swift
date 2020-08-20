@@ -10,7 +10,7 @@ import Foundation
 import Combine
 
 protocol ImageFetchable {
-    func fetchImageList(searchWord: String) -> AnyPublisher<ImageListResponse, ImageError>
+    func fetchImageList(searchWord: String, page: Int) -> AnyPublisher<ImageListResponse, ImageError>
     
     func fetchImageDetail(id: Int) -> AnyPublisher<ImageDetailResponse, ImageError>
 }
@@ -61,8 +61,8 @@ private extension ImageFetcher {
 }
 
 extension ImageFetcher: ImageFetchable {
-    func fetchImageList(searchWord: String) -> AnyPublisher<ImageListResponse, ImageError> {
-        return image(components: makeImageListComponents(searchWord: searchWord))
+    func fetchImageList(searchWord: String, page: Int) -> AnyPublisher<ImageListResponse, ImageError> {
+        return image(components: makeImageListComponents(searchWord: searchWord, page: page))
     }
     
     func fetchImageDetail(id: Int) -> AnyPublisher<ImageDetailResponse, ImageError> {
