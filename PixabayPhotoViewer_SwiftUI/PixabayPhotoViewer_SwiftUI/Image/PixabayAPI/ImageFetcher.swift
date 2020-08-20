@@ -30,15 +30,16 @@ private extension ImageFetcher {
         static let key = ""
     }
     
-    func makeImageListComponents(searchWord: String) -> URLComponents {
+    func makeImageListComponents(searchWord: String, page: Int) -> URLComponents {
         var components = URLComponents()
         components.scheme = PixabayAPI.scheme
         components.host = PixabayAPI.host
         components.path = PixabayAPI.path
         
         components.queryItems = [
+            URLQueryItem(name: "key", value: PixabayAPI.key),
             URLQueryItem(name: "q", value: searchWord),
-            URLQueryItem(name: "key", value: PixabayAPI.key)
+            URLQueryItem(name: "page", value: "\(page)")
         ]
         
         return components
