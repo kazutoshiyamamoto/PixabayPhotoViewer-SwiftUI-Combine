@@ -54,6 +54,30 @@ class ImageListViewModel: ObservableObject {
         })
             .store(in: &disposables)
     }
+    
+    func loadNext() {
+        if !self.isLastPageReached {
+            self.page += 1
+            
+            imageFetcher
+                .fetchImageList(searchWord: searchWord, page: self.page)
+                .map { $0.hits.map(ImageListRowViewModel.init) }
+                .receive(on: DispatchQueue.main)
+                .sink(receiveCompletion: { [weak self] value in
+                    guard let self = self else { return }
+                    switch value {
+                    case .failure:
+                        self.isLastPageReached = true
+                    case .finished:
+                        break
+                    }
+                    }, receiveValue: { [weak self] images in
+                        guard let self = self else { return }
+                        self.dataSource += images
+                })
+                .store(in: &disposables)
+        }
+    }
 }
 
 extension ImageListViewModel {
