@@ -47,6 +47,13 @@ private extension ImageListView {
                     ImageListRow(viewModel: item)
                 }
             }
+            
+            if !viewModel.isLastPageReached {
+                Text("Loading...")
+                    .onAppear(perform: {
+                        self.viewModel.loadNext()
+                    })
+            }
         }
     }
     
