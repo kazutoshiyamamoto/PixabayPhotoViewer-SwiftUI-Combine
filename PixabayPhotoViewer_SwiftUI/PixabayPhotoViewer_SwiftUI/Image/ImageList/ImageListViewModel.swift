@@ -15,6 +15,7 @@ class ImageListViewModel: ObservableObject {
     
     private let imageFetcher: ImageFetchable
     private var disposables = [AnyCancellable]()
+    private var page = 1
     
     init(imageFetcher: ImageFetchable, scheduler: DispatchQueue = DispatchQueue(label: "ImageListViewModel")) {
         self.imageFetcher = imageFetcher
