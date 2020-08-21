@@ -12,6 +12,7 @@ import Combine
 class ImageListViewModel: ObservableObject {
     @Published var searchWord: String = ""
     @Published var dataSource: [ImageListRowViewModel] = []
+    @Published var isLastPageReached: Bool = false
     
     private let imageFetcher: ImageFetchable
     private var disposables = [AnyCancellable]()
