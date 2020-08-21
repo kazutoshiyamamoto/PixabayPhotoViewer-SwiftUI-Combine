@@ -25,7 +25,12 @@ class ImageListViewModel: ObservableObject {
         
         $searchWord
             .debounce(for: .seconds(0.5), scheduler: scheduler)
-            .sink(receiveValue: { _fetchImage.send($0) })
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: {
+                _fetchImage.send($0)
+                self.dataSource = []
+                self.page = 1
+            })
             .store(in: &disposables)
         
         _fetchImage
