@@ -22,8 +22,6 @@ struct ImageListView: View {
                 
                 if !viewModel.dataSource.isEmpty {
                     imageListSection
-                } else {
-                    loadingSection
                 }
             }
             .listStyle(GroupedListStyle())
@@ -54,13 +52,6 @@ private extension ImageListView {
                         self.viewModel.loadNext()
                     })
             }
-        }
-    }
-    
-    var loadingSection: some View {
-        Section {
-            Text("Loading...")
-                .foregroundColor(.gray)
         }
     }
 }
