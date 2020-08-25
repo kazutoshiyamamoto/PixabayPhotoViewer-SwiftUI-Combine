@@ -24,7 +24,7 @@ class ImageListViewModel: ObservableObject {
         let _fetchImage = PassthroughSubject<String, Never>()
         
         $searchWord
-            .debounce(for: .seconds(0.5), scheduler: scheduler)
+            .debounce(for: .seconds(1.0), scheduler: scheduler)
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: {
                 _fetchImage.send($0)
