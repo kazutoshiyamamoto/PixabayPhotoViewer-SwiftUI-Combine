@@ -1,5 +1,5 @@
 PODS:
-  - Nuke (9.1.1)
+  - Nuke (9.1.2)
 
 DEPENDENCIES:
   - Nuke
@@ -9,7 +9,7 @@ SPEC REPOS:
     - Nuke
 
 SPEC CHECKSUMS:
-  Nuke: af4301b154d3afd8a3b045a5194a9a773a00b7a8
+  Nuke: dd2e6be6a34c042a7861e190632781d11f253026
 
 PODFILE CHECKSUM: 8df9a982768d45d5a5bc7e7a84e260141b26b69c
 
