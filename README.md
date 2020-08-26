@@ -37,7 +37,7 @@ struct PixabayAPI {
     static let key = "{APIKey}"
 }
 ```
-## Reference article
+## Reference articles
 - https://developer.apple.com/documentation/swiftui
 - https://developer.apple.com/documentation/combine
 - https://github.com/kean/Nuke
