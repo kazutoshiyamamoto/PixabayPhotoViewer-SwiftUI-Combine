@@ -15,5 +15,6 @@ struct ImageView: View {
         Image(uiImage: imageLoader.image)
             .resizable()
             .aspectRatio(contentMode: .fit)
+            .clipped()
     }
 }

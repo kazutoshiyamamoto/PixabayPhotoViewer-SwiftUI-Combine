@@ -33,6 +33,5 @@ struct ImageListRow: View {
                 }
             }
         }
-        .frame(height: 70.0)
     }
 }
