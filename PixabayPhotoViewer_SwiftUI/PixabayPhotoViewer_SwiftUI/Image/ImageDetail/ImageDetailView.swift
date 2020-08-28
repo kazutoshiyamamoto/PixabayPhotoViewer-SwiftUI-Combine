@@ -17,7 +17,7 @@ struct ImageDetailView: View {
     
     var body: some View {
         List(content: content)
-            .onAppear(perform: viewModel.refresh)
+            .onAppear(perform: viewModel.loadImageDetail)
             .navigationBarTitle(viewModel.dataSource?.user ?? "")
             .listStyle(GroupedListStyle())
     }

@@ -21,7 +21,7 @@ class ImageDetailViewModel: ObservableObject, Identifiable {
         self.imageFetcher = imageFetcher
     }
     
-    func refresh() {
+    func loadImageDetail() {
         imageFetcher
             .fetchImageDetail(id: id)
             .map { $0.hits.map(ImageDetailRowViewModel.init) }
