@@ -26,13 +26,13 @@ struct ImageDetailView: View {
 private extension ImageDetailView {
     func content() -> some View {
         if let viewModel = viewModel.dataSource {
-            return AnyView(details(viewModel: viewModel))
+            return AnyView(makeImageDetailView(viewModel: viewModel))
         } else {
             return AnyView(loading)
         }
     }
     
-    func details(viewModel: ImageDetailRowViewModel) -> some View {
+    func makeImageDetailView(viewModel: ImageDetailRowViewModel) -> some View {
         ImageDetailRowView(viewModel: viewModel)
     }
     
