@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+// 画像詳細画面の行となるView
 struct ImageDetailRowView: View {
     private let viewModel: ImageDetailRowViewModel
     

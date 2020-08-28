@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+// 画像詳細画面
 struct ImageDetailView: View {
     @ObservedObject var viewModel: ImageDetailViewModel
     
@@ -32,10 +33,12 @@ private extension ImageDetailView {
         }
     }
     
+    // 画像詳細を表示するViewを生成
     func makeImageDetailView(viewModel: ImageDetailRowViewModel) -> some View {
         ImageDetailRowView(viewModel: viewModel)
     }
     
+    // ロード中に表示するView
     var loadingView: some View {
         Text("Loading...")
             .foregroundColor(.gray)

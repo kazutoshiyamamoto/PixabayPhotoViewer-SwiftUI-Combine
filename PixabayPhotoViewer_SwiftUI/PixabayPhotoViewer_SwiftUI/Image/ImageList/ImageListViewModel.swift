@@ -23,16 +23,18 @@ class ImageListViewModel: ObservableObject {
         
         let _fetchImage = PassthroughSubject<String, Never>()
         
+        // 検索ワードが入力されるごとに_fetchImageへ入力された値を送信
         $searchWord
             .debounce(for: .seconds(1.0), scheduler: scheduler)
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: {
-                _fetchImage.send($0)
                 self.dataSource = []
                 self.page = 1
+                _fetchImage.send($0)
             })
             .store(in: &disposables)
         
+        // 画像情報を取得
         _fetchImage
             .map { searchWord -> AnyPublisher<Result<[ImageListRowViewModel], ImageError>, Never> in
                 imageFetcher.fetchImageList(searchWord: searchWord, page: self.page)
@@ -60,6 +62,7 @@ class ImageListViewModel: ObservableObject {
             .store(in: &disposables)
     }
     
+    // 次のページの画像を取得
     func loadNext() {
         if !self.isLastPageReached {
             self.page += 1
@@ -86,6 +89,7 @@ class ImageListViewModel: ObservableObject {
 }
 
 extension ImageListViewModel {
+    // 画像詳細画面を生成
     func makeImageDetailView(id: Int) -> some View {
         let viewModel = ImageDetailViewModel(id: id, imageFetcher: imageFetcher)
         return ImageDetailView(viewModel: viewModel)

@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+// 画像一覧の行となるView
 struct ImageListRow: View {
     private let viewModel: ImageListRowViewModel
     

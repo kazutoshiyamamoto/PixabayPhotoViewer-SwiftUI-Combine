@@ -21,6 +21,7 @@ class ImageLoader: ObservableObject {
         loadImage()
     }
     
+    // URLから画像を読み込む
     private func loadImage() {
         ImagePipeline.shared.loadImage(with: url) { [weak self] result in
             guard let self = self else { return }

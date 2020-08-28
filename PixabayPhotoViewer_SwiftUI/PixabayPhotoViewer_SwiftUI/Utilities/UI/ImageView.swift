@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+// 画像を表示するView
 struct ImageView: View {
     @ObservedObject var imageLoader: ImageLoader
     

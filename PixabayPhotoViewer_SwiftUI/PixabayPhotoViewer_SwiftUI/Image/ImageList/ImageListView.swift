@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+// 画像一覧画面
 struct ImageListView: View {
     @ObservedObject var viewModel: ImageListViewModel
     
@@ -31,6 +32,7 @@ struct ImageListView: View {
 }
 
 private extension ImageListView {
+    // 検索ワードを入力するTextField
     var searchField: some View {
         HStack(alignment: .center) {
             Image(systemName: "magnifyingglass")
@@ -38,6 +40,7 @@ private extension ImageListView {
         }
     }
     
+    // 画像一覧を表示するセクション
     var imageListSection: some View {
         Section {
             ForEach(viewModel.dataSource) { item in
@@ -46,6 +49,7 @@ private extension ImageListView {
                 }
             }
             
+            // 最後のページに到達していなければ次のページを読み込み表示
             if !viewModel.isLastPageReached {
                 Text("Loading...")
                     .onAppear(perform: {

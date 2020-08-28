@@ -12,6 +12,7 @@ import Combine
 class ImageDetailViewModel: ObservableObject, Identifiable {
     @Published var dataSource: ImageDetailRowViewModel?
     
+    // 画像のID
     let id: Int
     private let imageFetcher: ImageFetchable
     private var disposables = Set<AnyCancellable>()
@@ -21,6 +22,7 @@ class ImageDetailViewModel: ObservableObject, Identifiable {
         self.imageFetcher = imageFetcher
     }
     
+    // 画像詳細情報を取得
     func loadImageDetail() {
         imageFetcher
             .fetchImageDetail(id: id)
