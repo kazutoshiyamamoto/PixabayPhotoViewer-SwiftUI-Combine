@@ -28,7 +28,7 @@ private extension ImageDetailView {
         if let viewModel = viewModel.dataSource {
             return AnyView(makeImageDetailView(viewModel: viewModel))
         } else {
-            return AnyView(loading)
+            return AnyView(loadingView)
         }
     }
     
@@ -36,7 +36,7 @@ private extension ImageDetailView {
         ImageDetailRowView(viewModel: viewModel)
     }
     
-    var loading: some View {
+    var loadingView: some View {
         Text("Loading...")
             .foregroundColor(.gray)
     }
