@@ -86,7 +86,7 @@ class ImageListViewModel: ObservableObject {
 }
 
 extension ImageListViewModel {
-    func imageDetailView(id: Int) -> some View {
+    func makeImageDetailView(id: Int) -> some View {
         let viewModel = ImageDetailViewModel(id: id, imageFetcher: imageFetcher)
         return ImageDetailView(viewModel: viewModel)
     }
