@@ -1,4 +1,4 @@
-# PixabayPhotoViewer_SwiftUI
+# PixabayPhotoViewer-SwiftUI-Combine
 ![](https://img.shields.io/badge/platform-ios-lightgrey)
 ![](https://img.shields.io/badge/swift-5.2.4-orange)
 ![](https://img.shields.io/badge/license-MIT-green)
