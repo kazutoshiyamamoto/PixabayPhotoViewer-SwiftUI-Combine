@@ -4,7 +4,7 @@
 ![](https://img.shields.io/badge/license-MIT-green)
 <br>
 <br>
-Pixabay PhotoPhotoer_SwiftUI is an image search app that uses the pixabay API.
+Pixabay PhotoPhotoer-SwiftUI-Combine is an image search app that uses the pixabay API.
 <br>
 This app is built on MVVM with SwiftUI and Combine.
 <br>
@@ -90,4 +90,4 @@ struct PixabayAPI {
 - https://github.com/manchan/MVVM-with-Combine-Tutorial-for-iOS
 - https://stackoverflow.com/questions/59868393/swiftui-pagination-for-list-object
 ## License
-PixabayPhotoViewer_SwiftUI is available under the MIT license.
+PixabayPhotoViewer-SwiftUI-Combine is available under the MIT license.
